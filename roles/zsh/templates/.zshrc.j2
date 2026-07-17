@@ -1,0 +1,317 @@
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/entelektuelmaganda/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/entelektuelmaganda/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/entelektuelmaganda/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/entelektuelmaganda/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+alias vi_z='vi ~/.zshrc'
+
+#################################
+# GIT SHORTCUT
+#################################
+autoload -Uz compinit && compinit
+
+#################################
+# GOOGLE ANTIGRAVITY
+#################################
+alias ag="open -a 'Antigravity IDE'"
+
+#################################
+# WEBSTORM
+#################################
+export PATH="/Applications/WebStorm.app/Contents/MacOS:$PATH"
+
+#################################
+# API Request rather than kubectl
+#################################
+alias kubectl_get='curl -X GET -k'
+alias kubectl_post='curl -X POST -k'
+alias kubectl_put='curl -X PUT -k'
+
+
+PROMPT='%1~ %# '
+export PROMPT_EOL_MARK="" # output'Un sonunda % olmasın diye
+
+alias jupyter='source ~/myenv/bin/activate && jupyter notebook'
+
+# ====================
+# Docker CLI
+# ====================
+alias dc='docker container'                          # shortcut for docker container commands
+alias dcr='docker create'                            # create a new container
+alias mac_plat='--platform=linux/arm64'              # platform flag for ARM64 images (Mac M1/M2)
+alias di='docker image'                              # shortcut for docker image commands
+alias dih='docker image history'                     # show image history
+alias dii='docker image inspect'                     # inspect an image
+alias de='docker exec -it'                           # exec into a running container
+alias db='docker build'                              # build an image
+alias db_see_out_no_cc='docker build --no-cache --progress=plain'  # build without cache, see full output
+alias ds='docker start -a'                           # start a container and attach
+alias dst='docker stop'                              # stop a container
+alias dk='docker kill'                               # kill a container
+alias dl='docker logs'                               # view container logs
+alias dv='docker volume'                             # shortcut for docker volume commands
+alias dr='docker run'                                # run a new container
+alias dr_arm='docker container run -d --platform=linux/arm64' # run container detached on ARM64
+alias dn='docker network'                            # shortcut for docker network commands
+alias dt='docker image tag'                          # tag an image
+alias dp='docker push'                               # push an image to registry
+alias ddel_all='docker system prune'                 # remove all unused data
+
+# extra suggestions
+alias dps='docker ps'                                # list running containers
+alias dpsa='docker ps -a'                            # list all containers (including stopped)
+alias dimg='docker images'                           # list all images
+alias dtop='docker top'                              # display running processes of a container
+alias dins='docker inspect'                          # inspect a container
+
+# ====================
+# Docker Compose
+# ====================
+alias dco='docker compose'                           # shortcut for docker compose
+alias dcou='docker compose up'                       # start services (foreground)
+alias dcoud='docker compose up -d'                   # start services in detached mode
+alias dcod='docker compose down'                     # stop and remove containers
+alias dcol='docker compose logs -f'                  # follow logs from compose services
+alias dcor='docker compose restart'                  # restart services
+
+# ====================
+# Git
+# ====================
+alias gi='git init'                                  # initialize a new git repo
+alias gm='git commit -m'                             # commit changes with a message
+alias gb='git branch'                                # list/create branches
+alias gp='git push'                                  # push changes to remote
+alias gpl='git pull'                                 # pull changes from remote
+alias ga='git add'                                   # stage files for commit
+alias gc='git clone'                                 # clone the git repositories
+
+# extra suggestions
+alias gs='git status'                                # show repo status
+alias gl='git log --oneline --graph --decorate'      # pretty log view
+alias gco='git checkout'                             # switch branches or restore files
+alias gcl='git clone'                                # clone a repository
+
+# ====================
+# NPM (Node.js)
+# ====================
+alias ni='npm install'                               # install dependencies
+alias ns='npm run start'                             # run "start" script
+alias nt='npm run test'                              # run "test" script
+alias nb='npm run build'                             # run "build" script
+
+# extra suggestions
+alias ndev='npm run dev'                             # run "dev" script (common in frameworks)
+alias nci='npm ci'                                   # clean install (faster + reproducible)
+
+
+# ====================
+# Brew
+# ====================
+alias bup='brew update'              # update brew itself
+alias bug='brew upgrade'             # upgrade all installed packages
+alias bl='brew list'                 # list all installed brew packages
+alias blc='brew list --cask'         # list all installed cask apps
+alias bi='brew info'                 # show detailed info about a package
+alias bs='brew search'               # search for a package
+alias binst='brew install'           # install a package
+alias brun='brew uninstall'          # uninstall a package
+alias bclean='brew cleanup'          # remove old versions
+alias bdoc='brew doctor'             # check system for potential problems
+
+# Brew services
+alias bsl='brew services list'       # list all running/stopped services
+alias bstart='brew services start'   # start a service (e.g. bstart mysql)
+alias brest='brew services restart'  # restart a service (e.g. brest redis)
+alias bstop='brew services stop'     # stop a service (e.g. bstop jenkins)
+
+# ====================
+# Docker CLI
+# ====================
+alias dc='docker container'                          # shortcut for docker container commands
+alias dcr='docker create'                            # create a new container
+alias mac_plat='--platform=linux/arm64'              # platform flag for ARM64 images (Mac M1/M2)
+alias di='docker image'                              # shortcut for docker image commands
+alias dih='docker image history'                     # show image history
+alias dii='docker image inspect'                     # inspect an image
+alias de='docker exec -it'                           # exec into a running container
+alias db='docker build'                              # build an image
+alias db_see_out_no_cc='docker build --no-cache --progress=plain'  # build without cache, see full output
+alias ds='docker start -a'                           # start a container and attach
+alias dst='docker stop'                              # stop a container
+alias dk='docker kill'                               # kill a container
+alias dl='docker logs'                               # view container logs
+alias dv='docker volume'                             # shortcut for docker volume commands
+alias dr='docker run'                                # run a new container
+alias dr_arm='docker container run -d --platform=linux/arm64' # run container detached on ARM64
+alias dn='docker network'                            # shortcut for docker network commands
+alias dt='docker image tag'                          # tag an image
+alias dp='docker push'                               # push an image to registry
+alias ddel_all='docker system prune'                 # remove all unused data
+
+# extra suggestions
+alias dps='docker ps'                                # list running containers
+alias dpsa='docker ps -a'                            # list all containers (including stopped)
+alias dimg='docker images'                           # list all images
+alias dtop='docker top'                              # display running processes of a container
+alias dins='docker inspect'                          # inspect a container
+
+# ====================
+# Docker Compose
+# ====================
+alias dco='docker compose'                           # shortcut for docker compose
+alias dcou='docker compose up'                       # start services (foreground)
+alias dcoud='docker compose up -d'                   # start services in detached mode
+alias dcod='docker compose down'                     # stop and remove containers
+alias dcol='docker compose logs -f'                  # follow logs from compose services
+alias dcor='docker compose restart'                  # restart services
+
+# ====================
+# Git
+# ====================
+alias gi='git init'                                  # initialize a new git repo
+alias gm='git commit -m'                             # commit changes with a message
+alias gb='git branch'                                # list/create branches
+alias gp='git push'                                  # push changes to remote
+alias gpl='git pull'                                 # pull changes from remote
+alias ga='git add'                                   # stage files for commit
+
+# extra suggestions
+alias gs='git status'                                # show repo status
+alias gl='git log --oneline --graph --decorate'      # pretty log view
+alias gco='git checkout'                             # switch branches or restore files
+alias gcl='git clone'                                # clone a repository
+
+# ====================
+# NPM (Node.js)
+# ====================
+alias ni='npm install'                               # install dependencies
+alias ns='npm run start'                             # run "start" script
+alias nt='npm run test'                              # run "test" script
+alias nb='npm run build'                             # run "build" script
+
+# extra suggestions
+alias ndev='npm run dev'                             # run "dev" script (common in frameworks)
+alias nci='npm ci'                                   # clean install (faster + reproducible)
+
+# ====================
+# Kubernetes (kubectl)
+# ====================
+alias k='kubectl'                                     # shortcut for kubectl
+alias kctx='kubectl config use-context'               # switch cluster context
+alias kns='kubectl config set-context --current --namespace' # switch namespace
+alias kg='kubectl get'                                # get resources
+alias kd='kubectl describe'                           # describe resource details
+alias ka='kubectl apply -f'                           # apply manifest file
+alias kdel='kubectl delete -f'                        # delete manifest file
+alias kl='kubectl logs -f'                            # follow logs of a pod
+alias kex='kubectl exec -it'                          # exec into a pod
+alias kevents='kubectl get events --sort-by=.metadata.creationTimestamp' # get events ordered by time
+
+# common shortcuts
+alias kgp='kubectl get pods'                          # list pods
+alias kgs='kubectl get svc'                           # list services
+alias kgd='kubectl get deployments'                   # list deployments
+alias kgn='kubectl get nodes'                         # list nodes
+alias kgc='kubectl get configmaps'                    # list configmaps
+alias kgsec='kubectl get secrets'                     # list secrets
+
+# extra helpers
+alias kpf='kubectl port-forward'                      # port forward from pod/service
+alias krm='kubectl rollout restart'                   # restart deployment
+alias krs='kubectl rollout status'                    # check rollout status
+alias ktop='kubectl top pods'                         # show pod resource usage
+alias ktopn='kubectl top nodes'                       # show node resource usage
+alias kyaml='kubectl get -o yaml'                     # get resources as yaml
+alias kjson='kubectl get -o json'                     # get resources as json
+
+# ====================
+# Minikube
+# ====================
+alias mk='minikube'                                   # shortcut for minikube
+alias mks='minikube start'                            # start minikube cluster
+alias mkstop='minikube stop'                          # stop minikube cluster
+alias mkdel='minikube delete'                         # delete minikube cluster
+alias mkdash='minikube dashboard'                     # open dashboard in browser
+alias mkssh='minikube ssh'                            # ssh into minikube VM
+alias mkip='minikube ip'                              # get minikube cluster IP
+alias mkserv='minikube service'                       # access service in minikube
+
+# ====================
+# MySQL CLI
+# ====================
+
+alias myr='mysql -u root -p'                          # connect to MySQL as root (asks for password)
+alias mydbs='echo "SHOW DATABASES;" | mysql -u root -p'   # list all databases
+alias myusers='echo "SELECT user,host FROM mysql.user;" | mysql -u root -p' # list all users
+alias myver='mysql -V'                               # show MySQL version
+
+alias mydump='mysqldump -u root -p'                  # export a database (usage: mydump dbname > backup.sql)
+alias myimport='mysql -u root -p'                    # import a database (usage: myimport dbname < backup.sql)
+
+alias mystart='brew services start mysql'            # start MySQL service
+alias mystop='brew services stop mysql'              # stop MySQL service
+alias myrestart='brew services restart mysql'        # restart MySQL service
+alias mystatus='brew services list | grep mysql'     # check MySQL service status
+
+# ====================
+# MySQL Quality of Life
+# ====================
+
+alias myproc='echo "SHOW PROCESSLIST;" | mysql -u root -p'  # show active connections
+alias mygrants='echo "SHOW GRANTS FOR root@localhost;" | mysql -u root -p'  # show root user privileges
+alias mycreate='mysql -u root -p -e "CREATE DATABASE "'     # create a database (usage: mycreate dbname)
+alias mydrop='mysql -u root -p -e "DROP DATABASE "'         # drop a database (usage: mydrop dbname)
+
+# ====================
+# cURL (general)
+# ====================
+alias cj='curl -sS'                                         # curl: silent (no progress) but show errors
+alias cjH='curl -sS -H "Content-Type: application/json"'    # curl: JSON header included
+alias cjg='curl -sS -H "Content-Type: application/json" -XGET'   # curl: JSON GET
+alias cjp='curl -sS -H "Content-Type: application/json" -XPOST'  # curl: JSON POST
+alias cju='curl -sS -H "Content-Type: application/json" -XPUT'   # curl: JSON PUT
+alias cjd='curl -sS -H "Content-Type: application/json" -XDELETE'# curl: JSON DELETE
+alias cjh='curl -I'                                         # curl: fetch only HTTP headers
+alias cjl='curl -sS -L'                                     # curl: follow redirects
+alias cjo='curl -sS -o'                                     # curl: write output to file (usage: cjo FILE URL)
+
+# ====================
+# SSH
+# ====================
+
+alias sshgen='ssh-keygen -t rsa -b 4096 -C'       # generate a new RSA 4096-bit key (usage: sshgen "email@example.com")
+alias sshed='eval "$(ssh-agent -s)"'              # start ssh-agent
+alias sshadd='ssh-add ~/.ssh/id_rsa'              # add the default private key to ssh-agent
+alias sshpub='cat ~/.ssh/id_rsa.pub'              # show the public key
+alias sshls='ls -al ~/.ssh'                       # list ssh keys in ~/.ssh
+alias sshcopy='pbcopy < ~/.ssh/id_rsa.pub'        # copy public key to clipboard (macOS)
+alias sshcopylinux='xclip -sel clip < ~/.ssh/id_rsa.pub'  # copy public key to clipboard (Linux)
+
+
+# ====================
+# logstash
+# ====================
+
+alias logstash="bin/logstash -e 'input { stdin {} } output { stdout {} }'"   # location has to be logstash-9.1.2
+
+# for prometheus and grafana => /opt/homebrew/etc
+# End of Docker CLI completions
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Added by Antigravity
+export PATH="/Users/entelektuelmaganda/.antigravity/antigravity/bin:$PATH"
+
+# Added by Antigravity IDE
+export PATH="/Users/entelektuelmaganda/.antigravity-ide/antigravity-ide/bin:$PATH"

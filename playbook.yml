@@ -1,0 +1,7 @@
+---
+- name: Setup macOS environment
+  hosts: localhost
+
+  roles:
+    - zsh
+    - brew

@@ -1,0 +1,9 @@
+---
+- name: Deploy .zshrc from template
+  template:
+    src: .zshrc.j2
+    dest: ~/.zshrc
+    mode: '0644'
+
+- name: Reload zsh
+  shell: source ~/.zshrc
