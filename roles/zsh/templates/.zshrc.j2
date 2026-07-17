@@ -13,34 +13,48 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# ====================
+# ZSHRC EDITOR
+# ====================
 alias vi_z='vi ~/.zshrc'
 
-#################################
+# ====================
 # GIT SHORTCUT
-#################################
+# ====================
 autoload -Uz compinit && compinit
 
-#################################
+# ====================
 # GOOGLE ANTIGRAVITY
-#################################
+# ====================
 alias ag="open -a 'Antigravity IDE'"
 
-#################################
+# Added by Antigravity
+export PATH="/Users/entelektuelmaganda/.antigravity/antigravity/bin:$PATH"
+
+# Added by Antigravity IDE
+export PATH="/Users/entelektuelmaganda/.antigravity-ide/antigravity-ide/bin:$PATH"
+
+# ====================
 # WEBSTORM
-#################################
+# ====================
 export PATH="/Applications/WebStorm.app/Contents/MacOS:$PATH"
 
-#################################
+# ====================
 # API Request rather than kubectl
-#################################
+# ====================
 alias kubectl_get='curl -X GET -k'
 alias kubectl_post='curl -X POST -k'
 alias kubectl_put='curl -X PUT -k'
 
-
+# ====================
+# Prompt
+# ====================
 PROMPT='%1~ %# '
-export PROMPT_EOL_MARK="" # output'Un sonunda % olmasın diye
+export PROMPT_EOL_MARK=""
 
+# ====================
+# Jupyter Notebook
+# ====================
 alias jupyter='source ~/myenv/bin/activate && jupyter notebook'
 
 # ====================
@@ -66,8 +80,6 @@ alias dn='docker network'                            # shortcut for docker netwo
 alias dt='docker image tag'                          # tag an image
 alias dp='docker push'                               # push an image to registry
 alias ddel_all='docker system prune'                 # remove all unused data
-
-# extra suggestions
 alias dps='docker ps'                                # list running containers
 alias dpsa='docker ps -a'                            # list all containers (including stopped)
 alias dimg='docker images'                           # list all images
@@ -94,8 +106,6 @@ alias gp='git push'                                  # push changes to remote
 alias gpl='git pull'                                 # pull changes from remote
 alias ga='git add'                                   # stage files for commit
 alias gc='git clone'                                 # clone the git repositories
-
-# extra suggestions
 alias gs='git status'                                # show repo status
 alias gl='git log --oneline --graph --decorate'      # pretty log view
 alias gco='git checkout'                             # switch branches or restore files
@@ -108,11 +118,8 @@ alias ni='npm install'                               # install dependencies
 alias ns='npm run start'                             # run "start" script
 alias nt='npm run test'                              # run "test" script
 alias nb='npm run build'                             # run "build" script
-
-# extra suggestions
 alias ndev='npm run dev'                             # run "dev" script (common in frameworks)
 alias nci='npm ci'                                   # clean install (faster + reproducible)
-
 
 # ====================
 # Brew
@@ -127,8 +134,6 @@ alias binst='brew install'           # install a package
 alias brun='brew uninstall'          # uninstall a package
 alias bclean='brew cleanup'          # remove old versions
 alias bdoc='brew doctor'             # check system for potential problems
-
-# Brew services
 alias bsl='brew services list'       # list all running/stopped services
 alias bstart='brew services start'   # start a service (e.g. bstart mysql)
 alias brest='brew services restart'  # restart a service (e.g. brest redis)
@@ -157,8 +162,6 @@ alias dn='docker network'                            # shortcut for docker netwo
 alias dt='docker image tag'                          # tag an image
 alias dp='docker push'                               # push an image to registry
 alias ddel_all='docker system prune'                 # remove all unused data
-
-# extra suggestions
 alias dps='docker ps'                                # list running containers
 alias dpsa='docker ps -a'                            # list all containers (including stopped)
 alias dimg='docker images'                           # list all images
@@ -184,8 +187,6 @@ alias gb='git branch'                                # list/create branches
 alias gp='git push'                                  # push changes to remote
 alias gpl='git pull'                                 # pull changes from remote
 alias ga='git add'                                   # stage files for commit
-
-# extra suggestions
 alias gs='git status'                                # show repo status
 alias gl='git log --oneline --graph --decorate'      # pretty log view
 alias gco='git checkout'                             # switch branches or restore files
@@ -198,8 +199,6 @@ alias ni='npm install'                               # install dependencies
 alias ns='npm run start'                             # run "start" script
 alias nt='npm run test'                              # run "test" script
 alias nb='npm run build'                             # run "build" script
-
-# extra suggestions
 alias ndev='npm run dev'                             # run "dev" script (common in frameworks)
 alias nci='npm ci'                                   # clean install (faster + reproducible)
 
@@ -216,16 +215,12 @@ alias kdel='kubectl delete -f'                        # delete manifest file
 alias kl='kubectl logs -f'                            # follow logs of a pod
 alias kex='kubectl exec -it'                          # exec into a pod
 alias kevents='kubectl get events --sort-by=.metadata.creationTimestamp' # get events ordered by time
-
-# common shortcuts
 alias kgp='kubectl get pods'                          # list pods
 alias kgs='kubectl get svc'                           # list services
 alias kgd='kubectl get deployments'                   # list deployments
 alias kgn='kubectl get nodes'                         # list nodes
 alias kgc='kubectl get configmaps'                    # list configmaps
 alias kgsec='kubectl get secrets'                     # list secrets
-
-# extra helpers
 alias kpf='kubectl port-forward'                      # port forward from pod/service
 alias krm='kubectl rollout restart'                   # restart deployment
 alias krs='kubectl rollout status'                    # check rollout status
@@ -264,15 +259,6 @@ alias myrestart='brew services restart mysql'        # restart MySQL service
 alias mystatus='brew services list | grep mysql'     # check MySQL service status
 
 # ====================
-# MySQL Quality of Life
-# ====================
-
-alias myproc='echo "SHOW PROCESSLIST;" | mysql -u root -p'  # show active connections
-alias mygrants='echo "SHOW GRANTS FOR root@localhost;" | mysql -u root -p'  # show root user privileges
-alias mycreate='mysql -u root -p -e "CREATE DATABASE "'     # create a database (usage: mycreate dbname)
-alias mydrop='mysql -u root -p -e "DROP DATABASE "'         # drop a database (usage: mydrop dbname)
-
-# ====================
 # cURL (general)
 # ====================
 alias cj='curl -sS'                                         # curl: silent (no progress) but show errors
@@ -288,7 +274,6 @@ alias cjo='curl -sS -o'                                     # curl: write output
 # ====================
 # SSH
 # ====================
-
 alias sshgen='ssh-keygen -t rsa -b 4096 -C'       # generate a new RSA 4096-bit key (usage: sshgen "email@example.com")
 alias sshed='eval "$(ssh-agent -s)"'              # start ssh-agent
 alias sshadd='ssh-add ~/.ssh/id_rsa'              # add the default private key to ssh-agent
@@ -297,21 +282,4 @@ alias sshls='ls -al ~/.ssh'                       # list ssh keys in ~/.ssh
 alias sshcopy='pbcopy < ~/.ssh/id_rsa.pub'        # copy public key to clipboard (macOS)
 alias sshcopylinux='xclip -sel clip < ~/.ssh/id_rsa.pub'  # copy public key to clipboard (Linux)
 
-
-# ====================
-# logstash
-# ====================
-
-alias logstash="bin/logstash -e 'input { stdin {} } output { stdout {} }'"   # location has to be logstash-9.1.2
-
-# for prometheus and grafana => /opt/homebrew/etc
-# End of Docker CLI completions
-export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# Added by Antigravity
-export PATH="/Users/entelektuelmaganda/.antigravity/antigravity/bin:$PATH"
-
-# Added by Antigravity IDE
-export PATH="/Users/entelektuelmaganda/.antigravity-ide/antigravity-ide/bin:$PATH"

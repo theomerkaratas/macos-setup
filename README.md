@@ -14,7 +14,8 @@ This Ansible playbook automates the setup of a fresh macOS machine with:
 - macOS (10.14 or later)
 - [Homebrew](https://brew.sh/) installed
 - [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/index.html) installed (can be installed via Homebrew: `brew install ansible`)
-- Python 3 installed
+- Python 3 installed (can be installed via `brew install python@3.14`)
+- Git installed (can be installed via `brew install git`)
 
 ## Installation & Usage
 
